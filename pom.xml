@@ -21,6 +21,7 @@
 
 
     <modules>
+        <module>config-server</module>
         <module>eureka-server</module>
         <module>auth</module>
         <module>admin</module>
