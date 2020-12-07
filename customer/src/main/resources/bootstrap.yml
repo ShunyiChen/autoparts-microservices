@@ -5,11 +5,17 @@ spring:
     config:
       label: main
       name: config
-      profile: test
+      profile: dev
       uri: http://localhost:3344
       username: user
-      password: 84733edc-709f-4e0e-a118-9b4147ab40b1
+      password: 320b300c-6697-420f-aec9-ec8a932d94c3
 eureka:
     client:
       serviceUrl:
         defaultZone=http://eureka:8761/eureka/:
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
