@@ -7,13 +7,11 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-//@EnableCircuitBreaker
 @RibbonClient("customer")
 public class CustomerApp {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CustomerApp.class, args);
 	}
-
 
 }
