@@ -30,8 +30,7 @@
         <module>order</module>
         <module>producer</module>
         <module>product</module>
-<!--        <module>util</module>-->
-<!--        <module>example</module>-->
+        <module>payment</module>
     </modules>
 
     <dependencyManagement>
