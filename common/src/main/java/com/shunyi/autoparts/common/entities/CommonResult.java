@@ -1,4 +1,4 @@
-package com.shunyi.autoparts.order.entities;
+package com.shunyi.autoparts.common.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
