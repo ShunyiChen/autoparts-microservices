@@ -1,7 +1,7 @@
 package com.shunyi.autoparts.payment.service.impl;
 
 import com.shunyi.autoparts.payment.dao.PaymentDao;
-import com.shunyi.autoparts.payment.entities.Payment;
+import com.shunyi.autoparts.common.entities.Payment;
 import com.shunyi.autoparts.payment.service.PaymentService;
 import org.springframework.stereotype.Service;
 

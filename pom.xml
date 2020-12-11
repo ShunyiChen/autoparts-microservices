@@ -31,6 +31,7 @@
         <module>producer</module>
         <module>product</module>
         <module>payment</module>
+        <module>common</module>
     </modules>
 
     <dependencyManagement>

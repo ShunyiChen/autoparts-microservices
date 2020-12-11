@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.shunyi.autoparts.payment.dao.PaymentDao">
-    <insert id="create" parameterType="com.shunyi.autoparts.payment.entities.Payment" useGeneratedKeys="true" keyProperty="id">
+    <insert id="create" parameterType="com.shunyi.autoparts.common.entities.Payment" useGeneratedKeys="true" keyProperty="id">
         insert into payment(serial) values(#{serial});
     </insert>
 
-    <resultMap id="BaseResultMap" type="com.shunyi.autoparts.payment.entities.Payment" >
+    <resultMap id="BaseResultMap" type="com.shunyi.autoparts.common.entities.Payment" >
         <id column="id" property="id" jdbcType="BIGINT" javaType="Long"/>
         <result column="serial" property="serial" jdbcType="VARCHAR" javaType="String"/>
     </resultMap>

@@ -1,7 +1,7 @@
 package com.shunyi.autoparts.payment.controller;
 
-import com.shunyi.autoparts.payment.entities.CommonResult;
-import com.shunyi.autoparts.payment.entities.Payment;
+import com.shunyi.autoparts.common.entities.CommonResult;
+import com.shunyi.autoparts.common.entities.Payment;
 import com.shunyi.autoparts.payment.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;

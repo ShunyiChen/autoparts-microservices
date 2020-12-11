@@ -1,6 +1,6 @@
 package com.shunyi.autoparts.payment.service;
 
-import com.shunyi.autoparts.payment.entities.Payment;
+import com.shunyi.autoparts.common.entities.Payment;
 import org.springframework.data.repository.query.Param;
 
 /**

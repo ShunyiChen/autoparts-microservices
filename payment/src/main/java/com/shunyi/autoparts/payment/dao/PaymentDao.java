@@ -1,6 +1,6 @@
 package com.shunyi.autoparts.payment.dao;
 
-import com.shunyi.autoparts.payment.entities.Payment;
+import com.shunyi.autoparts.common.entities.Payment;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.data.repository.query.Param;
 
