@@ -2,3 +2,7 @@
 http://localhost:3347/payment/get/5
 //创建
 curl -X POST "http://localhost:3347/payment/create" -d 'id=5&serial=1005'
+
+
+//访问discovery
+http://localhost:3347/payment/discovery

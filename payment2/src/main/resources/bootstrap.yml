@@ -1,5 +1,5 @@
 server:
-  port: 3348
+  port: 33472
 spring:
   cloud:
     config:
@@ -21,9 +21,8 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
   instance:
-    instance-id: order3348
+    instance-id: payment33472
     prefer-ip-address: true
-
 # 暴露监控端点
 management:
   endpoints:

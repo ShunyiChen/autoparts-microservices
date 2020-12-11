@@ -1,22 +1,13 @@
 package com.shunyi.autoparts.payment.controller;
 
-import com.netflix.appinfo.InstanceInfo;
-import com.netflix.discovery.DiscoveryClient;
-import com.netflix.discovery.shared.Application;
-import com.netflix.discovery.shared.Applications;
 import com.shunyi.autoparts.common.entities.CommonResult;
 import com.shunyi.autoparts.common.entities.Payment;
 import com.shunyi.autoparts.payment.service.PaymentService;
-import jdk.nashorn.internal.runtime.regexp.joni.Region;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
-import java.util.Set;
 
 /**
  * @author Shunyi Chen
@@ -28,9 +19,6 @@ public class PaymentController {
 
     @Resource
     private PaymentService paymentService;
-
-    @Resource
-    private EurekaDiscoveryClient discoveryClient;
 
     @Value("${server.port}")
     private String serverPort;
@@ -51,24 +39,9 @@ public class PaymentController {
         Payment payment = paymentService.getPaymentById(id);
         log.info("********查询结果："+payment);
         if(payment != null) {
-            return new CommonResult(200, "查询成功, server port="+serverPort, payment);
+            return new CommonResult(200, "查询成功！,server port="+serverPort, payment);
         } else {
             return new CommonResult(500, "查询失败，查询ID:"+id);
         }
-    }
-
-    @GetMapping(value = "/payment/discovery")
-    public Object discovery() {
-        List<String> services = discoveryClient.getServices();
-        services.forEach(e -> {
-            log.info("*************element: "+e);
-        });
-
-        List<ServiceInstance> inst = discoveryClient.getInstances("PAYMENT-APP");
-        inst.forEach(e -> {
-            log.info(e.getInstanceId()+"\t"+e.getHost()+"\t"+e.getPort()+"\t"+e.getUri());
-        });
-
-        return this.discoveryClient;
     }
 }

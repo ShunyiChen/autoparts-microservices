@@ -32,6 +32,8 @@
         <module>product</module>
         <module>payment</module>
         <module>common</module>
+        <module>eureka-server2</module>
+        <module>payment2</module>
     </modules>
 
     <dependencyManagement>
