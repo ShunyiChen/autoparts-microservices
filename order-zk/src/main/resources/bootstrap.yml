@@ -1,0 +1,25 @@
+server:
+  port: 33482
+spring:
+  cloud:
+    zookeeper:
+      connect-string: 192.168.3.25:2181
+    config:
+      label: main
+      name: config
+      profile: dev
+      uri: http://localhost:33440
+      username: user
+      password: 92d7feb0-41fd-47c6-aab2-fcb5ca4ba0b7
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

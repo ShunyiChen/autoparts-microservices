@@ -1,0 +1,25 @@
+server:
+  port: 33440
+spring:
+  cloud:
+    zookeeper:
+      connect-string: 192.168.3.25:2181
+    config:
+      server:
+        git:
+          default-label: main
+          uri: git@github.com:ShunyiChen/autoparts-config-repo.git
+          search-paths:
+            - autoparts-config-repo
+      label: main
+  rabbitmq:
+    host: localhost
+    port: 5672
+    user: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
+
