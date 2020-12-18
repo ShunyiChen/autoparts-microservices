@@ -1,0 +1,29 @@
+server:
+  port: 8006
+spring:
+  cloud:
+    consul:
+      host: 192.168.3.25
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        hostname: 192.168.3.25
+    config:
+      server:
+        git:
+          default-label: main
+          uri: git@github.com:ShunyiChen/autoparts-config-repo.git
+          search-paths:
+            - autoparts-config-repo
+      label: main
+  rabbitmq:
+    host: localhost
+    port: 5672
+    user: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
+

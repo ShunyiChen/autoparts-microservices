@@ -37,6 +37,8 @@
         <module>payment-zk</module>
         <module>config-server-zk</module>
         <module>order-zk</module>
+        <module>config-server-sul</module>
+        <module>payment-consul</module>
     </modules>
 
     <dependencyManagement>
