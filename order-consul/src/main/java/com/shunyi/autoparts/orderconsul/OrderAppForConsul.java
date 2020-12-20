@@ -1,16 +1,15 @@
-package com.shunyi.autoparts.payment;
+package com.shunyi.autoparts.orderconsul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
 
 @SpringBootApplication
-@EnableEurekaClient
-public class PaymentApp2 {
+@EnableDiscoveryClient
+public class OrderAppForConsul {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PaymentApp2.class, args);
+		SpringApplication.run(OrderAppForConsul.class, args);
 	}
+
 }

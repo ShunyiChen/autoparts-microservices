@@ -1,0 +1,28 @@
+server:
+  port: 33483
+spring:
+  cloud:
+    consul:
+      host: 192.168.3.25
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+    config:
+      label: main
+      name: config
+      profile: dev
+      uri: http://localhost:8006
+      username: user
+      password: 92d7feb0-41fd-47c6-aab2-fcb5ca4ba0b7
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
