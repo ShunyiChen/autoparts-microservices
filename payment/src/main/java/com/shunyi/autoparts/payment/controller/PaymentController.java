@@ -1,13 +1,8 @@
 package com.shunyi.autoparts.payment.controller;
 
-import com.netflix.appinfo.InstanceInfo;
-import com.netflix.discovery.DiscoveryClient;
-import com.netflix.discovery.shared.Application;
-import com.netflix.discovery.shared.Applications;
 import com.shunyi.autoparts.common.entities.CommonResult;
 import com.shunyi.autoparts.common.entities.Payment;
 import com.shunyi.autoparts.payment.service.PaymentService;
-import jdk.nashorn.internal.runtime.regexp.joni.Region;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
@@ -16,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author Shunyi Chen

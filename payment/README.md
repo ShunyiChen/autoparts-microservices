@@ -1,7 +1,7 @@
 //查找
-http://localhost:3347/payment/get/5
+http://localhost:3347/payment/get/25
 //创建
-curl -X POST "http://localhost:3347/payment/create" -d 'id=5&serial=1005'
+curl -X POST http://localhost:3347/payment/create  -H "Accept: application/json"  -H "Content-Type: application/json"  -d '{"serial": "test_table123"}'
 
 
 //访问discovery
