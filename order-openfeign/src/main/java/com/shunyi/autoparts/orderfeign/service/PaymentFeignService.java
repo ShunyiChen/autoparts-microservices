@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.concurrent.TimeUnit;
+
 @Component
 @FeignClient(value = "PAYMENT-APP")
 public interface PaymentFeignService {
@@ -30,4 +32,12 @@ public interface PaymentFeignService {
      */
     @GetMapping(value = "/payment/get/{id}")
     CommonResult getPaymentById(@PathVariable("id") Long id);
+
+    /**
+     * Payment timeout
+     *
+     * @return
+     */
+    @GetMapping(value = "/payment/feign/timeout")
+    String paymentFeignTimeout();
 }

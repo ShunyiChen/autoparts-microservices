@@ -32,4 +32,10 @@ public class OrderController {
         log.info("查询by openfeign");
         return paymentFeignService.getPaymentById(id);
     }
+
+    @GetMapping(value = "/consumer/payment/feign/timeout")
+    public String feignTimeout() {
+        log.info("Openfeign default timeout is 1 second ");
+        return paymentFeignService.paymentFeignTimeout();
+    }
 }

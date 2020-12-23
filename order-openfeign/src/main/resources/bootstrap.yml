@@ -25,6 +25,13 @@ eureka:
     prefer-ip-address: true
     lease-renewal-interval-in-seconds: 1
     lease-expiration-duration-in-seconds: 2
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 7000
+logging:
+  level:
+    com.shunyi.autoparts.orderfeign.service.PaymentFeignService: debug
+
 # 暴露监控端点
 management:
   endpoints:
