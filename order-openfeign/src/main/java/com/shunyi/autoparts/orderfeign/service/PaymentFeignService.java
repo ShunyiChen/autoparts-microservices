@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.concurrent.TimeUnit;
-
 @Component
-@FeignClient(value = "PAYMENT-APP")
+@FeignClient(contextId = "client1", value = "PAYMENT-APP")
 public interface PaymentFeignService {
 
     /**

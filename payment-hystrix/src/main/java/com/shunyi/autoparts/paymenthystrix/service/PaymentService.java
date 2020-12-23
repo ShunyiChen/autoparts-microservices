@@ -2,6 +2,7 @@ package com.shunyi.autoparts.paymenthystrix.service;
 
 import com.shunyi.autoparts.common.entities.Payment;
 import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * @author Shunyi Chen
@@ -28,4 +29,12 @@ public interface PaymentService {
      * @return
      */
     String paymentInfo_Timeout(Long id);
+
+
+    /**
+     * 服务断熔
+     * @param id
+     * @return
+     */
+   String paymentCircuitBreaker(Long id);
 }

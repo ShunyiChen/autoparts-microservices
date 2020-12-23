@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author Shunyi Chen
@@ -76,6 +77,13 @@ public class PaymentController {
     @GetMapping(value = "/payment/hystrix/timeout/{id}")
     public String paymentInfo_Timeout(@PathVariable("id") Long id) {
         String result = paymentService.paymentInfo_Timeout(id);
+        log.info("*****result: "+result);
+        return result;
+    }
+
+    @GetMapping(value = "/payment/circuit/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Long id) {
+        String result = paymentService.paymentCircuitBreaker(id);
         log.info("*****result: "+result);
         return result;
     }
