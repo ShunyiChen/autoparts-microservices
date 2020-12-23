@@ -41,6 +41,7 @@
         <module>payment-consul</module>
         <module>order-consul</module>
         <module>order-openfeign</module>
+        <module>payment-hystrix</module>
     </modules>
 
     <dependencyManagement>
