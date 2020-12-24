@@ -43,6 +43,7 @@
         <module>order-openfeign</module>
         <module>payment-hystrix</module>
         <module>hystrix-dashboard</module>
+        <module>gateway</module>
     </modules>
 
     <dependencyManagement>
