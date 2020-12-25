@@ -10,14 +10,20 @@ spring:
         - id: payment_hystrix_routh
 #          uri: http://localhost:33475
           uri: lb://payment-app  #根据微服务名动态路由
+          filters:
+            - AddRequestParameter=X-Request-Id,1024
           predicates:
             - Path=/payment/get/**
-            - After=
-        - id: payment_hystrix_routh2
-#          uri: http://localhost:33475
-          uri: lb://payment-app
-          predicates:
-            - Path=/payment/get/**
+            - After=2020-12-25T09:33:55.415+08:00[Asia/Shanghai]
+            - Cookie=username,123  #请求需要带键username，值为simeon cookie
+            - Header=X-Request-Id, \d+ #请求头要有X-Request-Id属性，并且值为整数的正则表达试
+            - Method=GET
+            - Query=username, \d+ # 要有参数名username并且值还要是整数才能路由
+#        - id: payment_hystrix_routh2
+##          uri: http://localhost:33475
+#          uri: lb://payment-app
+#          predicates:
+#            - Path=/payment/get/**
     config:
       label: main
       name: config
