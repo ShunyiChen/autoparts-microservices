@@ -1,4 +1,4 @@
-package com.shunyi.microservice.customer.controller;
+package com.shunyi.autoparts.customer.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

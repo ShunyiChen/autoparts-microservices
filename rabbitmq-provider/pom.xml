@@ -11,7 +11,6 @@
 
     <artifactId>rabbitmq-provider</artifactId>
 
-
     <dependencies>
 
         <dependency>
@@ -96,7 +95,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.16</version>
+            <version>1.18.18</version>
         </dependency>
 
         <dependency>

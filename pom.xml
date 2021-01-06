@@ -46,6 +46,7 @@
         <module>gateway</module>
         <module>rabbitmq-provider</module>
         <module>rabbitmq-consumer</module>
+        <module>rabbitmq-consumer2</module>
     </modules>
 
     <dependencyManagement>

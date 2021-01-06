@@ -1,4 +1,4 @@
-package com.shunyi.autoparts.rabbitmqconsumer.controller;
+package com.shunyi.autoparts.rabbitmqconsumer.listener;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.stream.annotation.EnableBinding;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @EnableBinding(Sink.class)
-public class ReceiveMessageListenerController {
+public class ReceiveMessageListener {
 
     @Value("${server.port}")
     private String serverPort;

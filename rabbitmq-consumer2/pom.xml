@@ -9,7 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>rabbitmq-consumer</artifactId>
+    <artifactId>rabbitmq-consumer2</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
 
     <dependencies>
 
@@ -117,5 +122,4 @@
             <version>1.4.196</version>
         </dependency>
     </dependencies>
-
 </project>

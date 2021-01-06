@@ -6,3 +6,21 @@ curl -X POST http://localhost:3347/payment/create  -H "Accept: application/json"
 
 //访问discovery
 http://localhost:3347/payment/discovery
+
+
+
+
+安装zipkin
+参考官方文档 https://zipkin.io/pages/quickstart.html
+
+# get the latest source
+git clone https://github.com/openzipkin/zipkin
+cd zipkin
+# Build the server and also make its dependencies
+./mvnw -DskipTests --also-make -pl zipkin-server clean install
+# Run the server
+java -jar ./zipkin-server/target/zipkin-server-*exec.jar
+
+
+
+注意：使用chrome打开http://127.0.0.1:9411/zipkin/

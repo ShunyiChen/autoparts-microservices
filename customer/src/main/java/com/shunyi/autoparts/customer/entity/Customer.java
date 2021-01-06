@@ -1,4 +1,4 @@
-package com.shunyi.microservice.customer.entity;
+package com.shunyi.autoparts.customer.entity;
 
 import lombok.Data;
 

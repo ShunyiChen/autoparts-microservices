@@ -30,8 +30,17 @@ public class OrderController {
     }
 
     @GetMapping(value = "/consumer/payment/get/{id}")
-    public CommonResult<Payment> create(@PathVariable Long id) {
+    public CommonResult<Payment> get(@PathVariable Long id) {
         log.info("查询");
         return restTemplate.getForObject(PAYMENT_URL+"/payment/get/"+id, CommonResult.class);
+    }
+
+    /**
+     * 链路调用 sleuth + zipkin
+     * */
+    @GetMapping(value = "/consumer/payment/zipkin")
+    public String zipkin() {
+        log.info("zipkin");
+        return restTemplate.getForObject(PAYMENT_URL+"/payment/zipkin", String.class);
     }
 }

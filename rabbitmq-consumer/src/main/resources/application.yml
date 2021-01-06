@@ -1,6 +1,6 @@
 spring:
   application:
-    name: rabbitmq-provider-app
+    name: rabbitmq-consumer-app
   datasource:
     druid:
       db-type: com.alibaba.druid.pool.DruidDataSource

@@ -4,7 +4,7 @@ import com.shunyi.autoparts.orderfeign.service.PaymentFeignHystrixService;
 import org.springframework.stereotype.Component;
 
 /**
- * @author Asus
+ * @author Shunyi Chen
  * @create 2020-12-23 22:53
  */
 @Component

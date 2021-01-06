@@ -1,4 +1,4 @@
-package com.shunyi.microservice.customer.controller;
+package com.shunyi.autoparts.customer.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

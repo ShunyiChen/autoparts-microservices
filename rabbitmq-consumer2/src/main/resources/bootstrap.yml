@@ -1,13 +1,6 @@
 server:
-  port: 3348
+  port: 8803
 spring:
-  #  配置sleuth和zipkin
-  zipkin:
-    base-url: http://localhost:9411
-  sleuth:
-    sampler:
-  #      采样率值介于0到1直接，1表示全部采集
-      probability: 1
   cloud:
     config:
       label: main
@@ -16,6 +9,24 @@ spring:
       uri: http://localhost:3344
       username: user
       password: 92d7feb0-41fd-47c6-aab2-fcb5ca4ba0b7
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+      bindings:
+        input:
+          destination: studyExchange
+          content-type: application/json
+          binder: defaultRabbit
+          group: thesamegroup
+
   rabbitmq:
     host: localhost
     port: 5672
@@ -28,9 +39,8 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
   instance:
-    instance-id: order3348
+    instance-id: payment33472
     prefer-ip-address: true
-
 # 暴露监控端点
 management:
   endpoints:
