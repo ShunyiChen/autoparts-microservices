@@ -1,4 +1,4 @@
-package com.shunyi.microservice.configserver.config;
+package com.shunyi.autoparts.configserver.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

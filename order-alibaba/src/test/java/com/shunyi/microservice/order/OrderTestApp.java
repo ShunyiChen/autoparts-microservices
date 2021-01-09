@@ -1,4 +1,4 @@
-package com.shunyi.microservice.configserver;
+package com.shunyi.microservice.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +8,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableCircuitBreaker
-public class ConfigServerTestApp {
+public class OrderTestApp {
 
 	public static void main(String[] args) {
-		SpringApplication app = new SpringApplication(ConfigServerTestApp.class);
+		SpringApplication app = new SpringApplication(OrderTestApp.class);
 		app.setAdditionalProfiles("test");
 		app.run(args);
 	}

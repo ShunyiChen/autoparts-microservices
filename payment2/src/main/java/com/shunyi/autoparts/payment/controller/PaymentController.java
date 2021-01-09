@@ -29,9 +29,9 @@ public class PaymentController {
         int result = paymentService.create(payment);
         log.info("********插入结果："+result);
         if(result > 0) {
-            return new CommonResult(200, "插入数据库成功, server port="+serverPort, result);
+            return CommonResult.builder().code(200).message("插入数据库成功, server port="+serverPort+" result="+result).data(null).build();
         } else {
-            return new CommonResult(500, "插入数据库失败");
+            return CommonResult.builder().code(500).message("插入数据库失败").data(null).build();
         }
     }
 
@@ -40,9 +40,9 @@ public class PaymentController {
         Payment payment = paymentService.getPaymentById(id);
         log.info("********查询结果："+payment);
         if(payment != null) {
-            return new CommonResult(200, "查询成功！,server port="+serverPort, payment);
+            return CommonResult.builder().code(200).message("查询成功！,server port="+serverPort).data(payment).build();
         } else {
-            return new CommonResult(500, "查询失败，查询ID:"+id);
+            return CommonResult.builder().code(500).message("查询失败，查询ID:"+id).data(null).build();
         }
     }
 

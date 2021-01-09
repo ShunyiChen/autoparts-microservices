@@ -17,8 +17,23 @@
     <properties>
         <java.version>8</java.version>
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
     </properties>
 
+
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <modules>
         <module>config-server</module>
@@ -47,10 +62,21 @@
         <module>rabbitmq-provider</module>
         <module>rabbitmq-consumer</module>
         <module>rabbitmq-consumer2</module>
+        <module>payment-alibaba</module>
+        <module>payment-alibaba2</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
+<!--            spring cloud alibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -63,6 +89,7 @@
                 <artifactId>bootstrap</artifactId>
                 <version>3.3.6</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -79,4 +106,6 @@
             </plugin>
         </plugins>
     </build>
+
+
 </project>

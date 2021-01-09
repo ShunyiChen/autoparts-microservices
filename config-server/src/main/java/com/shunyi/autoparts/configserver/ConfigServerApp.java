@@ -1,4 +1,4 @@
-package com.shunyi.microservice.configserver;
+package com.shunyi.autoparts.configserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
