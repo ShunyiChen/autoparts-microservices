@@ -16,5 +16,6 @@ spring:
       config:
         server-addr: 127.0.0.1:8848
         file-extension: yaml
-
+        group: DEV_GROUP # 设置不同分组
+        namespace: 5845309c-58fc-4222-8a8e-d23652247884
 

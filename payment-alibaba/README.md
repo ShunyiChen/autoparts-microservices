@@ -9,3 +9,5 @@ https://github.com/alibaba/spring-cloud-alibaba/blob/master/spring-cloud-alibaba
 本地启动Nacos
 cd C:\Users\ESEHHUC\Downloads\nacos-server-1.4.0\nacos\bin
 执行./startup.cmd -m standalone
+
+

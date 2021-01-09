@@ -23,4 +23,6 @@ java -jar ./zipkin-server/target/zipkin-server-*exec.jar
 
 
 
-注意：使用chrome打开http://127.0.0.1:9411/zipkin/
+打开zipkin dashboard: 
+http://127.0.0.1:9411/zipkin/
+注意要用chrome浏览器

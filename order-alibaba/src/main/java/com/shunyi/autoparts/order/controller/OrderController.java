@@ -34,24 +34,4 @@ public class OrderController {
 
 
 
-//    @GetMapping(value = "/consumer/payment/create")
-//    public CommonResult<Payment> create(Payment payment) {
-//        log.info("创建");
-//        return restTemplate.postForObject(PAYMENT_URL+"/payment/create", payment, CommonResult.class);
-//    }
-//
-//    @GetMapping(value = "/consumer/payment/get/{id}")
-//    public CommonResult<Payment> get(@PathVariable Long id) {
-//        log.info("查询");
-//        return restTemplate.getForObject(PAYMENT_URL+"/payment/get/"+id, CommonResult.class);
-//    }
-//
-//    /**
-//     * 链路调用 sleuth + zipkin
-//     * */
-//    @GetMapping(value = "/consumer/payment/zipkin")
-//    public String zipkin() {
-//        log.info("zipkin");
-//        return restTemplate.getForObject(PAYMENT_URL+"/payment/zipkin", String.class);
-//    }
 }
