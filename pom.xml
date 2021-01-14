@@ -64,6 +64,8 @@
         <module>rabbitmq-consumer2</module>
         <module>payment-alibaba</module>
         <module>payment-alibaba2</module>
+        <module>alibaba-config-server</module>
+        <module>alibaba-sentinel-service</module>
     </modules>
 
     <dependencyManagement>

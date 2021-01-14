@@ -81,4 +81,11 @@ discovery:
     group: DEV_GROUP # 设置不同分组
     namespace: 15c59e93-82c5-4f3a-96ba-378f5678ea9a
 
+启动微服务 alibaba-config-server
+
 访问http://localhost:3377/config/info 检查该服务是否在nacos注册成功
+
+
+
+遇到的问题：
+1.如果三台主机IP地址发生变化，需要重新配置nginx.conf和nacos的cluster.conf, 否则nacos网站运行死慢而且服务注册不上，需注意
