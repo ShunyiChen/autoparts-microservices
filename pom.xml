@@ -96,7 +96,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>autoparts microservice build</finalName>
+        <finalName>autoparts-auto-build</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
