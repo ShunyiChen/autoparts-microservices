@@ -16,8 +16,17 @@ public class AlibabaConfigClientController {
     @Value("${config.info}")
     private String configInfo;
 
+    //详细解释@Value https://www.hxstrive.com/article/854.htm
+    @Value("#{systemProperties['os.name']}")
+    private String osName; // 结果：Windows 10
+
     @GetMapping("/config/info")
     public String getConfigInfo() {
         return configInfo;
+    }
+
+    @GetMapping("/config/osName")
+    public String getosName() {
+        return osName;
     }
 }
