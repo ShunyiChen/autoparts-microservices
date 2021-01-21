@@ -66,6 +66,9 @@
         <module>payment-alibaba2</module>
         <module>alibaba-config-server</module>
         <module>alibaba-sentinel-service</module>
+        <module>alibaba-payment9002</module>
+        <module>alibaba-payment9003</module>
+        <module>alibaba-order84</module>
     </modules>
 
     <dependencyManagement>
