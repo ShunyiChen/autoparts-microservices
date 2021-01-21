@@ -17,6 +17,14 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.shunyi</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+
         <!--  Alibaba sentinel 持久化用到 -->
         <dependency>
             <groupId>com.alibaba.csp</groupId>

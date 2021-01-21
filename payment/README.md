@@ -15,7 +15,7 @@ http://localhost:3347/payment/discovery
 
 # get the latest source
 git clone https://github.com/openzipkin/zipkin
-cd zipkin
+cd zipkin #用git bash打开 
 # Build the server and also make its dependencies
 ./mvnw -DskipTests --also-make -pl zipkin-server clean install
 # Run the server
