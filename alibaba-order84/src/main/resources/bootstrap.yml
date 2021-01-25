@@ -25,11 +25,23 @@ spring:
         dashboard: localhost:8080
 #        默认8719， 如果发现被占用，则自动+1寻找，直到找到端口
         port: 8719
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 192.168.1.43:1111
+            dataId: alibaba-sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
 # 暴露监控端点
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+service-url:
+  nacos-user-service: http://alibaba-payment-provider
 
-
+feign:
+  sentinel:
+    enabled: true # 在sentinel中开启Feign

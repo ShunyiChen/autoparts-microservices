@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author Simeon Chen
+ * @author Shunyi Chen
  *
  * @create 2021-01-13 11:33
  */

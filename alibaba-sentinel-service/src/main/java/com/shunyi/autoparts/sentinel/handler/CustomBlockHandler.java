@@ -4,7 +4,7 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.shunyi.autoparts.common.entities.CommonResult;
 
 /**
- * @author Simeon Chen
+ * @author Shunyi Chen
  *
  * @create 2021-01-21 17:02
  */

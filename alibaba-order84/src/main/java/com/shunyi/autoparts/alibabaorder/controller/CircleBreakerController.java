@@ -2,6 +2,7 @@ package com.shunyi.autoparts.alibabaorder.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
+import com.shunyi.autoparts.alibabaorder.service.MyFeignService;
 import com.shunyi.autoparts.common.entities.CommonResult;
 import com.shunyi.autoparts.common.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,10 @@ public class CircleBreakerController {
 
     @Resource
     private RestTemplate restTemplate;
+
+    @Resource
+    private MyFeignService service;
+
 
     @GetMapping(value = "/consumer/fallback/{id}")
     //第一种情况：如果不配置@SentinelResource(value = "fallback")，当参数为0直接显示错误页面对用户很不友好
@@ -48,5 +53,11 @@ public class CircleBreakerController {
 
     public CommonResult<Payment> blockHandler(@PathVariable("id") Long id, BlockException blockException) {
         return new CommonResult(444, "兜底处理："+"\t服务不可用block handler\t"+blockException.getMessage(), new Payment(id, null));
+    }
+
+
+    @GetMapping(value = "/consumer/openfeign/{id}")
+    public CommonResult<Payment> callOpenfeign(@PathVariable("id") Long id) {
+        return service.openfeign(id);
     }
 }

@@ -35,8 +35,9 @@ Windows:  ./startup.cmd
 Linux: sh /usr/shunyi/nacos/bin/startup.sh
 
 
-2.配置192.168.1.106（Linux）:
-与1都同一套路配置
+2.配置192.168.1.106（Widnows）:
+与1都同一套路配置,注意启动startup.cmd
+
 3.配置192.168.1.43（Linux）:
 与1都同一套路配置
 
@@ -89,3 +90,9 @@ discovery:
 
 遇到的问题：
 1.如果三台主机IP地址发生变化，需要重新配置nginx.conf和nacos的cluster.conf, 否则nacos网站运行死慢而且服务注册不上，需注意
+
+
+附加：
+允许zipkin
+cd zipkin
+java -jar ./zipkin-server/target/zipkin-server-*exec.jar
