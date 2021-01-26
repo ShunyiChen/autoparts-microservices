@@ -1,0 +1,65 @@
+server:
+  port: 9005
+spring:
+  #  配置sleuth和zipkin
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      #      采样率值介于0到1直接，1表示全部采集
+      probability: 1
+  cloud:
+    #    配置nacos
+    nacos:
+      discovery:
+        server-addr: 192.168.1.43:1111
+      config:
+        server-addr: 192.168.1.43:1111
+        file-extension: yaml
+        group: DEV_GROUP # 设置不同分组
+        namespace: 15c59e93-82c5-4f3a-96ba-378f5678ea9a
+#    配置alibaba sentinel
+    sentinel:
+      transport:
+#       配置 sentinel dashboard
+        dashboard: localhost:8080
+#        默认8719， 如果发现被占用，则自动+1寻找，直到找到端口
+        port: 8719
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  enable-auto-data-source-proxy: false
+  tx-service-group: my_test_tx_group
+  service:
+    vgroupMapping:
+      my_test_tx_group: default
+  config:
+    type: nacos
+    nacos:
+      server-addr: 192.168.1.43:1111
+      group: "SEATA_GROUP"
+      namespace: ""
+      username: "nacos"
+      password: "nacos"
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 192.168.1.43:1111
+      namespace: ""
+      group: SEATA_GROUP
+      cluster: default
+feign:
+  hystrix:
+    enabled: false # 在Hystrix中关闭Feign
+logging:
+  level:
+    io:
+      seata: info
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
