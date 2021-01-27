@@ -25,6 +25,7 @@ spring:
         dashboard: localhost:8080
 #        默认8719， 如果发现被占用，则自动+1寻找，直到找到端口
         port: 8719
+
 seata:
   enabled: true
   application-id: ${spring.application.name}
@@ -37,7 +38,7 @@ seata:
     type: nacos
     nacos:
       server-addr: 192.168.1.43:1111
-      group: "SEATA_GROUP"
+      group : "SEATA_GROUP"
       namespace: ""
       username: "nacos"
       password: "nacos"
@@ -48,13 +49,17 @@ seata:
       namespace: ""
       group: SEATA_GROUP
       cluster: default
+
+
 feign:
   hystrix:
-    enabled: false # 在Hystrix中关闭Feign
+    enabled: false
+
 logging:
   level:
     io:
       seata: info
+
 # 暴露监控端点
 management:
   endpoints:
