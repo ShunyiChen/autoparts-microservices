@@ -55,6 +55,9 @@ seata:
 feign:
   hystrix:
     enabled: false
+ribbon:
+  ConnectTimeout: 5000
+  ReadTimeout: 27000  # openFeign请求timeout
 
 logging:
   level:

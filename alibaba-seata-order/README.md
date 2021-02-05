@@ -101,13 +101,13 @@ public class DataSourceProxyConfig {
 
 
 
-**seata demo测试启动顺序：**
+**seata global transaction demo 测试启动顺序：**
 
 1.启动nacos集群
 2.启动sentinel
 3.启动seata
 4.启动自己（account/order/storage）微服务
-5.查看
+5.查看各微服务数据库更新情况
 
 请求URL: 
 http://localhost:9006/seata/order/create?userId=1&productId=1&count=1&money=100&status=0
