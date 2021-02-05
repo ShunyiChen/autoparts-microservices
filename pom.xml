@@ -69,6 +69,10 @@
         <module>alibaba-payment9002</module>
         <module>alibaba-payment9003</module>
         <module>alibaba-order84</module>
+        <module>alibaba-seata-order</module>
+        <module>alibaba-seata-storage</module>
+        <module>alibaba-seata-account</module>
+        <module>order-alibaba</module>
     </modules>
 
     <dependencyManagement>
