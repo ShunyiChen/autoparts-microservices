@@ -1,6 +1,7 @@
 package com.shunyi.autoparts.seataaccount.dao;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.math.BigDecimal;
 
@@ -12,5 +13,5 @@ import java.math.BigDecimal;
 @Mapper
 public interface AccountDao {
 
-    void deduct(Long userId, BigDecimal money);
+    void deduct(@Param("userId") Long userId, @Param("money") BigDecimal money);
 }

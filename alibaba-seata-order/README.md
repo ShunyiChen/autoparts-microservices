@@ -81,3 +81,5 @@ logging:
 3.启动seata
 4.启动自己（account/order/storage）微服务
 
+请求URL: 
+http://localhost:9006/seata/order/create?userId=1&productId=1&count=1&money=100&status=0

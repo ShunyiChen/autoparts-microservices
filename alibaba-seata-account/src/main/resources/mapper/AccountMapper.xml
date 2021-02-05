@@ -4,11 +4,15 @@
     <resultMap id="BaseResultMap" type="com.shunyi.autoparts.seataaccount.entity.Account" >
         <id column="id" property="id" jdbcType="BIGINT" javaType="Long"/>
         <result column="user_id" property="userId" jdbcType="BIGINT" javaType="Long"/>
-        <result column="product_id" property="productId" jdbcType="BIGINT" javaType="Long"/>
-        <result column="count" property="count" jdbcType="INTEGER" javaType="Integer"/>
-        <result column="money" property="money" jdbcType="DECIMAL" javaType="BigDecimal"/>
-        <result column="status" property="status" jdbcType="INTEGER" javaType="Integer"/>
+        <result column="total" property="total" jdbcType="DECIMAL" javaType="BigDecimal"/>
+        <result column="used" property="used" jdbcType="DECIMAL" javaType="BigDecimal"/>
+        <result column="residue" property="residue" jdbcType="DECIMAL" javaType="BigDecimal"/>
     </resultMap>
     <update id="deduct">
+        UPDATE t_account
+        SET
+            residue = residue - #{money},used = used + #{money}
+        WHERE
+            user_id = #{userId}
     </update>
 </mapper>

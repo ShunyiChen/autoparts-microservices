@@ -1,5 +1,7 @@
 package com.shunyi.autoparts.seatastorage.service;
 
+import org.springframework.stereotype.Service;
+
 /**
  * @author Shunyi Chen
  *

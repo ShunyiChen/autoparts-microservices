@@ -26,8 +26,8 @@ public class OrderController {
     @Value("${server.port}")
     private String serverPort;
 
-    @GetMapping(value = "/seata/order/create")
-    public CommonResult create(@RequestBody Order order) {
+    @GetMapping("/seata/order/create")
+    public CommonResult create(Order order) {
         orderService.create(order);
         log.info("********创建order成功");
         return CommonResult.builder().code(200).message("插入order成功, server port="+serverPort).data(order).build();

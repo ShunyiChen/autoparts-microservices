@@ -1,7 +1,7 @@
 package com.shunyi.autoparts.seatastorage.dao;
 
-import com.shunyi.autoparts.seatastorage.entity.Storage;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author Shunyi Chen
@@ -11,5 +11,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface StorageDao {
 
-    void deduct(Long productId, Integer count);
+    void deduct(@Param("productId") Long productId, @Param("count") Integer count);
 }

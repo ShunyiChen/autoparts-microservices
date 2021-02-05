@@ -5,12 +5,15 @@
         <id column="id" property="id" jdbcType="BIGINT" javaType="Long"/>
         <result column="product_id" property="productId" jdbcType="BIGINT" javaType="Long"/>
         <result column="residue" property="residue" jdbcType="INTEGER" javaType="Integer"/>
-        <result column="total" property="residue" jdbcType="INTEGER" javaType="Integer"/>
-        <result column="used" property="residue" jdbcType="INTEGER" javaType="Integer"/>
+        <result column="total" property="total" jdbcType="INTEGER" javaType="Integer"/>
+        <result column="used" property="used" jdbcType="INTEGER" javaType="Integer"/>
     </resultMap>
 
     <update id="deduct">
-        update t_storage set used = used + #{count}, residue = residue - #{count} where product_id=#{productId}
+        update t_storage
+        set used    = used + #{count},
+            residue = residue - #{count}
+        where product_id = #{productId}
     </update>
 
 </mapper>

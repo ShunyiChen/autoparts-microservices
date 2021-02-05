@@ -25,9 +25,9 @@ public class AccountController {
     private String serverPort;
 
     @RequestMapping(value = "/account/deduct")
-    public CommonResult create(Long userId, BigDecimal money) {
+    public CommonResult deduct(Long userId, BigDecimal money) {
         accountService.deduct(userId, money);
-        log.info("********扣钱成功");
+        log.info("********扣钱成功,端口("+serverPort+")");
         return CommonResult.builder().code(200).message("插入数据库成功").build();
     }
 }

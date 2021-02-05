@@ -15,12 +15,9 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Account {
-
     private Long id;
     private Long userId;
-    private Long productId;
-    private Integer count;
-    private BigDecimal money;
-    /** 0-创建中 1-已完结 */
-    private Integer status;
+    private BigDecimal total;
+    private BigDecimal used;
+    private BigDecimal residue;
 }

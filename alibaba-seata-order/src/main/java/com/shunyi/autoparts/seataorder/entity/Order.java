@@ -15,7 +15,6 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Order {
-
     private Long id;
     private Long userId;
     private Long productId;

@@ -27,6 +27,7 @@ public class StorageController {
     @RequestMapping(value = "/storage/deduct")
     public CommonResult deduct(Long productId, Integer count) {
         storageService.deduct(productId, count);
+        log.info("库存扣减成功，端口("+serverPort+")");
         return CommonResult.builder().code(200).message("扣减storage数据库成功").build();
     }
 }

@@ -5,6 +5,7 @@ import com.shunyi.autoparts.seataorder.entity.Order;
 import com.shunyi.autoparts.seataorder.service.AccountService;
 import com.shunyi.autoparts.seataorder.service.OrderService;
 import com.shunyi.autoparts.seataorder.service.StorageService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,7 @@ public class OrderServiceImpl implements OrderService {
     private StorageService storageService;
 
     @Override
+    @GlobalTransactional(name="create-order", rollbackFor = Exception.class)
     public void create(Order order) {
         //*******新建订单
         orderDao.create(order);
@@ -37,7 +39,7 @@ public class OrderServiceImpl implements OrderService {
         //*******调用账户做扣钱
         accountService.deduct(order.getUserId(), order.getMoney());
         log.info("成功扣减账户钱数");
-        //*******修改订单状态， 从零到1
+        //*******修改订单状态， 从0到1
         orderDao.update(order.getUserId(), 0);
         log.info("成功修改订单状态为0");
 
