@@ -24,11 +24,11 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void deduct(Long userId, BigDecimal money) {
 
-//        try {
-//            TimeUnit.SECONDS.sleep(20);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            TimeUnit.SECONDS.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         accountDao.deduct(userId, money);
         log.info("*******成功从账户扣款："+money+"元");
