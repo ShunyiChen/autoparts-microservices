@@ -71,15 +71,43 @@ logging:
       seata: info
 ````
 
+5.配置seata DataSourceProxy
+@Configuration
+public class DataSourceProxyConfig {
+
+    @Value("${mybatis.mapper-locations}")
+    private String mapperLocations;
+
+    @Bean
+    @ConfigurationProperties(prefix = "spring.datasource")
+    public DataSource druidDataSource(){
+        return new DruidDataSource();
+    }
+
+    @Bean
+    public DataSourceProxy dataSourceProxy(DataSource dataSource) {
+        return new DataSourceProxy(dataSource);
+    }
+
+    @Bean
+    public SqlSessionFactory sqlSessionFactoryBean(DataSourceProxy dataSourceProxy) throws Exception {
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        sqlSessionFactoryBean.setDataSource(dataSourceProxy);
+        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(mapperLocations));
+        sqlSessionFactoryBean.setTransactionFactory(new SpringManagedTransactionFactory());
+        return sqlSessionFactoryBean.getObject();
+    }
+}
 
 
 
-**demo测试启动顺序：**
+**seata demo测试启动顺序：**
 
 1.启动nacos集群
 2.启动sentinel
 3.启动seata
 4.启动自己（account/order/storage）微服务
+5.查看
 
 请求URL: 
 http://localhost:9006/seata/order/create?userId=1&productId=1&count=1&money=100&status=0

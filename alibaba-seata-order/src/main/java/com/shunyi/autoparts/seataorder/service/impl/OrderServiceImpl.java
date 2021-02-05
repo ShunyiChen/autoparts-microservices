@@ -28,7 +28,7 @@ public class OrderServiceImpl implements OrderService {
     private StorageService storageService;
 
     @Override
-    @GlobalTransactional(name="create-order", rollbackFor = Exception.class)
+    @GlobalTransactional(name="my_test_tx_group", rollbackFor = Exception.class)
     public void create(Order order) {
         //*******新建订单
         orderDao.create(order);
