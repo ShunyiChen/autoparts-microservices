@@ -7,6 +7,8 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
 
+import java.io.FileInputStream;
+
 @SpringBootApplication
 @EnableDiscoveryClient
 //@EnableCircuitBreaker
@@ -14,6 +16,10 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
 public class OrderApp {
 
 	public static void main(String[] args) {
+
+		FileInputStream fis;
+
+
 		SpringApplication.run(OrderApp.class, args);
 	}
 
