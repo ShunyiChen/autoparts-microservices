@@ -10,10 +10,10 @@ spring:
       probability: 1
   cloud:
     config:
-      label: main
-      name: config
-      profile: dev
-      uri: http://localhost:3344
+      label: main #git分支名称
+      name: config #git上配置文件名称前缀
+      profile: test #读取文件后缀名称
+      uri: http://localhost:3344 #配置中心地址
       username: user
       password: 92d7feb0-41fd-47c6-aab2-fcb5ca4ba0b7
   rabbitmq:
