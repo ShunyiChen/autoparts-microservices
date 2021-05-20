@@ -1,23 +1,32 @@
 package com.shunyi.microservice.inventory.controller;
 
-import com.alibaba.fastjson.JSON;
-import com.shunyi.autoparts.common.entities.CommonResult;
 import com.shunyi.autoparts.common.entities.Payment;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 public class InventoryController {
-
-    private Map<String, CommonResult> map = new HashMap<>();
 
     /** 测试异常数 */
     @GetMapping("/testF")
     @CrossOrigin
     public String testF() {
+        return "-----------test 异常数123";
+    }
+
+
+    /** 测试异常数 */
+    @GetMapping("/testG")
+    @CrossOrigin
+    public String testG() {
+
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         return "-----------test 异常数123";
     }
 
