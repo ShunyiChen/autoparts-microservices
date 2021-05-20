@@ -6,6 +6,7 @@ import com.shunyi.autoparts.payment.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,7 @@ import java.util.concurrent.TimeUnit;
  */
 @RestController
 @Slf4j
+@RefreshScope
 public class PaymentController {
 
     @Resource
@@ -29,6 +31,15 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String serverPort;
+
+    @Value("${config.info}")
+    private String configInfo;
+
+    @GetMapping("/configInfo")
+    public String getConfigInfo() {
+        System.out.println("-----"+configInfo);
+        return configInfo;
+    }
 
     @PostMapping(value = "/payment/create")
     public CommonResult create(@RequestBody Payment payment) {

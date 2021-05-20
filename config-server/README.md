@@ -18,3 +18,10 @@ curl -X POST "http://localhost:3344/actuator/bus-refresh"
 
 7.通过Bus通知指定服务更改配置，一处更改处处更新(定点通知)
 curl -X POST "http://localhost:3344/actuator/bus-refresh/customer-app:3345"
+
+//修改hosts
+C:\Windows\System32\drivers\etc\hosts
+添加
+127.0.0.1 eureka7001.com
+127.0.0.1 eureka7002.com
+127.0.0.1 config-3344.com
